@@ -11,7 +11,7 @@
   --kraft:#C8A17E;
 
   --display:'Grandstander','Trebuchet MS',system-ui,sans-serif;
-  --body:'Montserrat','Helvetica Neue',Arial,sans-serif;
+  --body:'Public Sans','Helvetica Neue',Arial,sans-serif;
   --hand:'Caveat','Bradley Hand',cursive;
 
   --r:28px;
@@ -97,6 +97,17 @@ a:hover{color:var(--pink)}
   margin:0 auto;
   font-size:17px;
   color:rgba(74,31,51,.82);
+}
+
+.hero__lede p{margin:0 0 clamp(12px,1.8vw,16px)}
+.hero__lede p:last-child{margin-bottom:0}
+
+.hero__welcome{
+  font-family:var(--display);
+  font-weight:700;
+  font-size:clamp(19px,3.4vw,23px);
+  line-height:1.2;
+  color:var(--plum);
 }
 
 @keyframes rise{
