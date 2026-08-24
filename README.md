@@ -12,7 +12,7 @@ assets/
   logo-party-and-paper-*.png  wordmark, pink and white colourways
   favicon*, apple-touch-icon  the brand heart, cropped from the logo
   og-party-and-paper.png      1200x630 social card (white on pink)
-  fonts/                      self-hosted Grandstander, Public Sans, Caveat
+  fonts/                      self-hosted Public Sans, Caveat
 vercel.json                 cache headers + security headers
 robots.txt, sitemap.xml
 ```
@@ -38,12 +38,16 @@ From the brand board (v1). Worth re-reading before changing anything visual.
 
 Rough colour balance: 55% blush, 25% paper, 15% pink, 5% accents.
 
-- **Grandstander** (700) — headlines only, never a whole paragraph.
-- **Public Sans** (400/600/700) — body, labels, buttons. Gemma's pick: the
-  typeface behind the US Web Design System, so it is built for small sizes and
-  long labels rather than for personality.
-- **Caveat** (500) — handwriting, one line at a time.
+- **Public Sans** — everything. Gemma's pick: the typeface behind the US Web
+  Design System, built for small sizes and long labels rather than for
+  personality. Two weights do all the work: 400/600 for body and labels, 800
+  for headlines, the welcome line and card titles. It is one variable file per
+  subset, so the heavier headline weight costs no extra download.
+- **Caveat** (500) — handwriting, one line at a time. The only text on the
+  site not set in Public Sans.
 
+The logo is the playful part of this brand. Headlines used to compete with it
+(Grandstander), which is why they no longer try.
 Logo: pink-on-light is the default, minimum 180px wide on screen, and it never
 sits on a busy pattern — hence the Candy Stripe appears only as a thin ribbon
 at the top. The heart is used on its own as the favicon, which the brand board
