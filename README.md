@@ -12,7 +12,7 @@ assets/
   logo-party-and-paper-*.png  wordmark, pink and white colourways
   favicon*, apple-touch-icon  the brand heart, cropped from the logo
   og-party-and-paper.png      1200x630 social card (white on pink)
-  fonts/                      self-hosted Grandstander, Montserrat, Caveat
+  fonts/                      self-hosted Grandstander, Public Sans, Caveat
 vercel.json                 cache headers + security headers
 robots.txt, sitemap.xml
 ```
@@ -39,7 +39,9 @@ From the brand board (v1). Worth re-reading before changing anything visual.
 Rough colour balance: 55% blush, 25% paper, 15% pink, 5% accents.
 
 - **Grandstander** (700) — headlines only, never a whole paragraph.
-- **Montserrat** (400/600/700) — body, labels, buttons.
+- **Public Sans** (400/600/700) — body, labels, buttons. Gemma's pick: the
+  typeface behind the US Web Design System, so it is built for small sizes and
+  long labels rather than for personality.
 - **Caveat** (500) — handwriting, one line at a time.
 
 Logo: pink-on-light is the default, minimum 180px wide on screen, and it never
