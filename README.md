@@ -65,17 +65,39 @@ Checked in Chromium at 1440px and 390px:
 ## Deploying to Vercel
 
 The repo is a static site, so Vercel needs no framework preset and no build
-command. Import the repo, leave the build settings empty, deploy.
+command. Import the repo, leave the build settings empty, deploy. Production
+branch is `main`.
 
 For `partypaper.co.uk`, add both the apex and `www` in
-**Project → Settings → Domains**, then point DNS at Vercel. If DNS is on
-Cloudflare, the records are:
+**Project → Settings → Domains**, setting `www` to redirect to the apex. DNS
+stays with Namecheap — no nameserver change. In Namecheap's **Advanced DNS**
+tab, first delete the two records Namecheap pre-fills:
 
-| Type | Name | Value | Proxy |
+| Type | Host | Value |
+|---|---|---|
+| `CNAME` | `www` | `parkingpage.namecheap.com.` |
+| `URL Redirect` | `@` | `http://www.partypaper.co.uk/` |
+
+Then add the two records Vercel asks for:
+
+| Type | Host | Value | TTL |
 |---|---|---|---|
-| `A` | `@` | `76.76.21.21` | DNS only (grey cloud) |
-| `CNAME` | `www` | `cname.vercel-dns.com` | DNS only (grey cloud) |
+| `A` | `@` | the IP on Vercel's Domains screen | Automatic |
+| `CNAME` | `www` | the target on Vercel's Domains screen | Automatic |
 
-Vercel shows the exact values to use on the Domains screen — trust those over
-this table if they differ. The proxy must stay off, or Vercel cannot issue the
-TLS certificate.
+Vercel verifies against the exact values shown on its own Domains screen, and
+those differ between projects — copy from there rather than from any guide. The
+common pairs are `76.76.21.21` with `cname.vercel-dns.com`, or `216.198.79.1`
+with a project-specific `*.vercel-dns-016.com` target.
+
+## Email
+
+`gemma@partypaper.co.uk` runs on iCloud+ Custom Email Domain, shared to a
+Family Sharing member, so Apple holds the mailbox and DKIM-signs outbound mail
+as this domain. That needs four more records alongside the two above — MX, SPF,
+an `apple-domain=` verification TXT, and a `sig1._domainkey` CNAME — which
+Apple generates per domain during setup.
+
+Note the SPF record uses `v=spf1 redirect=icloud.com`, which delegates the
+entire policy to Apple. A domain may only ever have one SPF record, so adding a
+second sending service means rewriting that one rather than adding another.
