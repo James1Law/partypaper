@@ -1,0 +1,268 @@
+/* ---------------------------------------------------------------
+   Party & Paper — brand tokens (see brand board v1)
+   Colour balance target: 55% blush, 25% paper, 15% pink, 5% accents
+   --------------------------------------------------------------- */
+:root{
+  --pink:#F6396C;      /* logo, buttons, price flashes. Never tint or shade it. */
+  --blush:#F6E4EB;     /* default background */
+  --paper:#FFF8F4;     /* cards and text panels */
+  --plum:#4A1F33;      /* all body text — never black */
+  --sherbet:#FFC44D;   /* small doses only */
+  --kraft:#C8A17E;
+
+  --display:'Grandstander','Trebuchet MS',system-ui,sans-serif;
+  --body:'Montserrat','Helvetica Neue',Arial,sans-serif;
+  --hand:'Caveat','Bradley Hand',cursive;
+
+  --r:28px;
+  --measure:56ch;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+
+html{
+  -webkit-text-size-adjust:100%;
+  color-scheme:light;
+}
+
+body{
+  margin:0;
+  background:var(--blush);
+  color:var(--plum);
+  font-family:var(--body);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+img{max-width:100%;height:auto;display:block}
+
+p{margin:0 0 1rem}
+
+a{color:var(--plum);text-decoration-color:var(--pink);text-underline-offset:3px}
+a:hover{color:var(--pink)}
+
+.visually-hidden{
+  position:absolute;width:1px;height:1px;margin:-1px;padding:0;
+  overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;
+}
+
+/* Candy Stripe — the house wrap, used as a thin ribbon only so the
+   logo never has to sit on a busy pattern. */
+.ribbon{
+  height:12px;
+  background:repeating-linear-gradient(45deg,var(--pink) 0 13px,var(--paper) 13px 26px);
+}
+
+.page{
+  max-width:820px;
+  margin:0 auto;
+  padding:clamp(48px,9vw,88px) 24px 0;
+}
+
+/* ---------- HERO ---------- */
+.hero{text-align:center}
+
+.hero__logo{
+  width:min(560px,100%);
+  margin:0 auto clamp(24px,4vw,32px);
+  animation:rise .8s ease-out both;
+}
+
+.badge{
+  display:inline-block;
+  margin:0 0 clamp(20px,3vw,26px);
+  padding:7px 15px;
+  border-radius:999px;
+  background:var(--sherbet);
+  color:var(--plum);
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  line-height:1;
+}
+
+.hero__title{
+  font-family:var(--display);
+  font-weight:700;
+  font-size:clamp(34px,7vw,60px);
+  line-height:1.05;
+  margin:0 0 clamp(16px,2.5vw,22px);
+}
+
+.hero__lede{
+  max-width:var(--measure);
+  margin:0 auto;
+  font-size:17px;
+  color:rgba(74,31,51,.82);
+}
+
+@keyframes rise{
+  from{opacity:0;transform:translateY(14px)}
+  to{opacity:1;transform:none}
+}
+
+/* ---------- WHAT WE MAKE ---------- */
+.offer{margin:clamp(44px,6.5vw,62px) 0 0}
+
+.offer__list{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+  gap:16px;
+}
+
+.offer__item{
+  background:var(--paper);
+  border-radius:var(--r);
+  padding:24px 26px 26px;
+}
+
+.offer__item b{
+  font-family:var(--display);
+  font-weight:700;
+  font-size:19px;
+  display:block;
+  margin-bottom:4px;
+}
+
+.offer__item > span:last-child{
+  font-size:14px;
+  line-height:1.5;
+  color:rgba(74,31,51,.72);
+  display:block;
+}
+
+.swatch{
+  display:block;
+  width:46px;
+  height:46px;
+  border-radius:14px;
+  margin-bottom:16px;
+}
+.swatch--stripe{
+  background:repeating-linear-gradient(45deg,var(--pink) 0 9px,var(--paper) 9px 18px);
+}
+.swatch--hearts{
+  background-color:var(--pink);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewBox='0 0 44 44'%3E%3Cpath fill='%23FFF8F4' d='M11 8c-3 0-5 2.2-5 5 0 5 8 9 8 9s8-4 8-9c0-2.8-2-5-5-5-1.6 0-2.6.8-3 1.6C13.6 8.8 12.6 8 11 8z'/%3E%3Cpath fill='%23FFF8F4' fill-opacity='.55' d='M33 26c-2.2 0-3.6 1.6-3.6 3.6 0 3.6 5.8 6.4 5.8 6.4s5.8-2.8 5.8-6.4c0-2-1.4-3.6-3.6-3.6-1.2 0-1.9.6-2.2 1.2-.3-.6-1-1.2-2.2-1.2z'/%3E%3C/svg%3E");
+  background-size:23px 23px;
+}
+.swatch--kraft{
+  background-color:var(--kraft);
+  background-image:repeating-linear-gradient(90deg,var(--pink) 0 2px,transparent 2px 12px);
+}
+
+/* ---------- CONTACT ---------- */
+.contact{
+  margin:16px 0 0;
+  background:var(--paper);
+  border-radius:var(--r);
+  padding:clamp(32px,5vw,44px) clamp(26px,5vw,44px);
+  text-align:center;
+}
+
+.contact__title{
+  font-family:var(--display);
+  font-weight:700;
+  font-size:clamp(24px,3.6vw,32px);
+  line-height:1.1;
+  margin:0 0 10px;
+}
+
+.contact__body{
+  max-width:46ch;
+  margin:0 auto 26px;
+  color:rgba(74,31,51,.82);
+}
+
+.contact__action{margin:0 0 14px}
+
+/* White on Party Pink. 19px/700 keeps this in WCAG "large text"
+   territory, where the 3.9:1 ratio passes AA. */
+.button{
+  display:inline-block;
+  background:var(--pink);
+  color:#fff;
+  font-family:var(--body);
+  font-size:19px;
+  font-weight:700;
+  line-height:1;
+  letter-spacing:.01em;
+  padding:17px 34px;
+  border-radius:999px;
+  text-decoration:none;
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+.button:hover,.button:focus-visible{
+  color:#fff;
+  transform:translateY(-2px);
+  box-shadow:0 10px 20px rgba(246,57,108,.28);
+}
+
+.contact__address{
+  margin:0 0 14px;
+  font-size:14px;
+  color:rgba(74,31,51,.7);
+}
+.contact__address a{
+  color:inherit;
+  display:inline-block;
+  padding:13px 8px;
+}
+
+.contact__note{
+  font-family:var(--hand);
+  font-weight:500;
+  font-size:26px;
+  line-height:1.3;
+  color:var(--pink);
+  margin:0;
+}
+
+/* ---------- FOOTER ---------- */
+.footer{
+  max-width:820px;
+  margin:0 auto;
+  padding:clamp(44px,7vw,64px) 24px clamp(40px,6vw,56px);
+  text-align:center;
+}
+
+.footer__strip{
+  display:flex;
+  width:190px;
+  height:10px;
+  margin:0 auto 22px;
+  border-radius:999px;
+  overflow:hidden;
+}
+.footer__strip i{flex:1}
+
+.footer p{
+  margin:0;
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:rgba(74,31,51,.72);
+}
+
+/* ---------- PREFERENCES ---------- */
+:focus-visible{
+  outline:3px solid var(--plum);
+  outline-offset:3px;
+  border-radius:8px;
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+}
+
+@media (prefers-contrast:more){
+  .hero__lede,.offer__item > span:last-child,
+  .contact__body,.contact__address,.footer p{color:var(--plum)}
+}
