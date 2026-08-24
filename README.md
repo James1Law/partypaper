@@ -9,7 +9,8 @@ Plain HTML and CSS. No build step, no dependencies, no JavaScript.
 index.html                  the page
 styles.css                  brand tokens + layout
 assets/
-  logo-party-and-paper-*.png  wordmark, pink and white colourways
+  logo-party-and-paper.svg    wordmark used in the hero (pink, transparent)
+  logo-party-and-paper-white.png  white colourway, kept for dark grounds
   favicon*, apple-touch-icon  the brand heart, cropped from the logo
   og-party-and-paper.png      1200x630 social card (white on pink)
   fonts/                      self-hosted Public Sans, Caveat
