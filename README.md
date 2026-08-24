@@ -98,6 +98,8 @@ as this domain. That needs four more records alongside the two above — MX, SPF
 an `apple-domain=` verification TXT, and a `sig1._domainkey` CNAME — which
 Apple generates per domain during setup.
 
-Note the SPF record uses `v=spf1 redirect=icloud.com`, which delegates the
-entire policy to Apple. A domain may only ever have one SPF record, so adding a
-second sending service means rewriting that one rather than adding another.
+The SPF record Apple issues is `v=spf1 include:icloud.com ~all`. Enter it at
+Namecheap **without** the surrounding quotes Apple's email shows — Namecheap adds
+its own quoting, and a literal pair ends up double-quoted and invalid. A domain
+may only ever have one SPF record, so adding a second sending service means
+adding another `include:` to this record rather than creating a new one.
