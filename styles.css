@@ -99,6 +99,17 @@ a:hover{color:var(--pink)}
   color:rgba(74,31,51,.82);
 }
 
+.hero__lede p{margin:0 0 clamp(12px,1.8vw,16px)}
+.hero__lede p:last-child{margin-bottom:0}
+
+.hero__welcome{
+  font-family:var(--display);
+  font-weight:700;
+  font-size:clamp(19px,3.4vw,23px);
+  line-height:1.2;
+  color:var(--plum);
+}
+
 @keyframes rise{
   from{opacity:0;transform:translateY(14px)}
   to{opacity:1;transform:none}
