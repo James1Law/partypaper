@@ -10,8 +10,9 @@ index.html                  the page
 styles.css                  brand tokens + layout
 assets/
   logo-party-and-paper.svg    wordmark used in the hero (pink, transparent)
-  logo-party-and-paper-white.png  white colourway, kept for dark grounds
-  favicon*, apple-touch-icon  the brand heart, cropped from the logo
+  logo-party-and-paper-white.png  white colourway, for dark grounds
+  favicon.svg, favicon*.png, favicon.ico, apple-touch-icon
+                              the brand heart, taken from the logo
   og-party-and-paper.png      1200x630 social card (white on pink)
   fonts/                      self-hosted Public Sans, Caveat
 vercel.json                 cache headers + security headers
